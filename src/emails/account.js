@@ -10,7 +10,7 @@ const sendWelcomeEmail = async (email, name = 'User') => {
         text: `Dear ${name},\n\tThank you for signing in to the Task App. Let us know how you get along with the app.\n\nFor any further queries mail us at ankitagrawal700aa@gmail.com`,
         // html:''
     });
-    console.log('Welcome mail sent !');
+    // console.log('Welcome mail sent !');
 };
 
 const sendCancellationEmail = async (email, name = 'User') => {
@@ -23,7 +23,7 @@ const sendCancellationEmail = async (email, name = 'User') => {
 Please feel free to let us know about any issues and suggestions regarding the Task App. Your suggestions are sincerely welcomed.
 You can mail us at ankitagrawal700aa@gmail.com`,
     });
-    console.log('Cancellation mail sent !');
+    // console.log('Cancellation mail sent !');
 };
 
 module.exports = {

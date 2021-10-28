@@ -1,42 +1,13 @@
 // \node Projects>  /CS/mongodb/bin/mongod.exe --dbpath=/CS/mongodb-data
 // \task-manager>   npm run dev
+///Gadbad ho??  check AWAIT!!!!!!!!!!
 
-const express = require('express');
-require('./db/mongoose'); /////connecting to the mongoose
-
-const userRouter = require('./routers/user');
-const taskRouter = require('./routers/task');
-
-const app = express();
+const app = require('./app');
 
 const port = process.env.PORT;
-
-// EXPRESS MIDDLEWARE......................................
-
-// app.use((req,res,next)=>{
-//     res.status(503).send("The site is currently under maintainence. Please try back soon!!");
-// })
-
-// app.use((req,res,next)=>{
-//     if(req.method=="GET"){
-//         res.send('GET methods are currently disabled!!')
-//     } else{
-//         next();
-//     }
-// })
-
-//.........................................................
-
-
-app.use(express.json()); // parses the incoming json request
-app.use(userRouter); //loading and using the user route in application    i.e. registering user router with express application
-app.use(taskRouter); //loading and using the task route in application
-
 app.listen(port, () => {
-    console.log('Server is up on port ' + port);
+	console.log('Server is up on port ' + port);
 });
-
-
 
 /////...................HIDING PASSWORD AND TOKENS WHILE SENDING USER........................
 // const obj={
@@ -51,9 +22,6 @@ app.listen(port, () => {
 
 // console.log(JSON.stringify(obj))
 // console.log(obj.toJSON())
-
-
-
 
 ///....................ESTABILISHING RELATIONSHIP BETWEEN USER AND TASK......................
 // const User = require('./models/user');
@@ -70,4 +38,3 @@ app.listen(port, () => {
 //     console.log(user.tasks);
 // };
 // main();
-
